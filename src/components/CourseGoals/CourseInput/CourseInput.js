@@ -27,19 +27,13 @@ const CourseInput = props => {
     props.onAddGoal(enteredValue);
   };
 
-  /* if 'isValid' is false, set the color property to red, else set to black */
+   /* dynamically sets the form CSS class, if isValid returns false,
+  using the template literal, appends invalid to the className, else appends a blank string */
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
-        <label style={{ color: !isValid ? "red" : "black" }}>Course Goal</label>
-        <input
-          style={{
-            borderColor: !isValid ? "red" : "black",
-            background: !isValid ? "salmon" : "transparent",
-          }}
-          type="text"
-          onChange={goalInputChangeHandler}
-        />
+      <div className={`form-control ${!isValid ? 'invalid' : ''}`}>
+        <label>Course Goal</label>
+        <input type="text" onChange={goalInputChangeHandler} />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
