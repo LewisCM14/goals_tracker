@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Button from '../../UI/Button/Button';
 import './CourseInput.css';
 
+// uses template literal to check props and if the invalid prop is passed adjust display depending on the isValid state.
 const FormControl = styled.div`
   margin: 0.5rem 0;
 
